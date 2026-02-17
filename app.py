@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template
 import os
 
@@ -17,7 +18,7 @@ def post(id):
     post = posts[id]
     return render_template("post.html", post=post)
 
-
+# 👇 ESSA PARTE É OBRIGATÓRIA PARA O RENDER
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
