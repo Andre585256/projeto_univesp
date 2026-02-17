@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Postagens</title>
+</head>
+<body>
+
+    <h1>Lista de Postagens</h1>
+
+    <a href="/novo">➕ Novo Post</a>
+
+    <hr>
+
+    {% for post in posts %}
+        <h2>
+            <a href="/post/{{ post.id }}">{{ post.titulo }}</a>
+        </h2>
+
+        <p>{{ post.conteudo }}</p>
+
+        <a href="/editar/{{ post.id }}">✏️ Editar</a>
+        <a href="/apagar/{{ post.id }}">🗑️ Apagar</a>
+
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
