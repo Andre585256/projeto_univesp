@@ -5,19 +5,26 @@
 </head>
 <body>
 
-    <h1>Lista de Postagens</h1>
+<h1>Lista de Postagens</h1>
+
+<a href="/novo">➕ Novo Post</a>
+
+<hr>
+
+{% for post in posts %}
+
+    <h2>
+        <a href="/post/{{ loop.index0 }}">{{ post.titulo }}</a>
+    </h2>
+
+    <p>{{ post.conteudo }}</p>
+
+    <a href="/editar/{{ loop.index0 }}">✏️ Editar</a>
+    <a href="/apagar/{{ loop.index0 }}">🗑️ Apagar</a>
 
     <hr>
 
-    {% for post in posts %}
-        <h2>
-            <a href="/post/{{ loop.index0 }}">{{ post.titulo }}</a>
-        </h2>
-
-        <p>{{ post.conteudo }}</p>
-
-        <hr>
-    {% endfor %}
+{% endfor %}
 
 </body>
 </html>
