@@ -17,10 +17,6 @@ def post(id):
     post = posts[id]
     return render_template("post.html", post=post)
 
-# IMPORTANTE PARA O RENDER
+# necessário para o gunicorn no Render
 if __name__ != "__main__":
     gunicorn_app = app
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
